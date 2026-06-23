@@ -7,8 +7,10 @@ from supabase import create_client
 import io
 
 # ---------- 连接 Supabase ----------
-SUPABASE_URL = "https://cfodnwbbndbdkhgjcbwx.supabase.co"
-SUPABASE_KEY = "sb_publishable_dqPMk33iGwwSmxhMWLDsvw_rzD-k6E9"
+import os
+
+SUPABASE_URL = os.environ.get("SUPABASE_URL")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # ---------- 工具函数 ----------
